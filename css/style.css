@@ -1,19 +1,36 @@
 html,
 body {
     width: 100%;
-    height: 100%;
-}
-
-body {
+	margin:0;
     font-family: "Century Gothic";
+	text-align:center
 }
 img{
 	position:relative;
 	z-index:-1;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-o-transition: all 0.7s ease-out;
-	transition: all 0.7s ease-out;
+}
+.section{
+	position: relative;
+    text-align: center;
+	width:100%;
+	height:auto;
+	margin:0;
+	top:0;
+	overflow:hidden;
+}
+.section img{
+	width: 100%;
+	margin: 0;
+}
+/* Section Anim
+* --------------------------------------- */
+.sectionAnim img{
+	position:absolute;
+	left:-70px;
+	width:100%;
+	height:120%;
+	top:-100px;
+	z-index:-1;
 }
 .wrap{
 	width: 1180px;
@@ -41,63 +58,15 @@ img{
 .box p{
 	font-size:20px;
 }
-#fullpage{
-	position:relative
-}
-.section{
-	position: relative;
-    text-align: center;
-	min-height:100%;
-	margin:0;
-	overflow:hidden;
-	padding-top:100px
-}
-/* Section 0
-* --------------------------------------- */
-.section00{
-	padding: 0;
-	overflow: hidden;
-}
-.section00 img{
-	height: 100%;
-}
-.section00long{
-	padding: 0;
-	overflow-y:scroll;
-	overflow-x: hidden;
-}
-.section00long img{
-	width: 100%;
-	margin: 0;
-}
 
-.sectionAnim img{
-	position:absolute;
-	left:-70px;
-	width:100%;
-	height:120%;
-	top:-100px;
-	z-index:-1;
-}
-	
-/* Section 2
+/* static img
 * --------------------------------------- */
-
 #staticImg{
 	display: block;
 	position: absolute;
 	z-index: 1;
-	top: 2300%;
 	left: 5%;
 	height: 100%;
-
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease-out;
-	-o-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-		
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
 }
 
 #staticImg img{
@@ -105,89 +74,32 @@ img{
 	height:100%;
 }
 
-#section2 .imgsContainer,
-#staticImg .imgsContainer,
-#section3 .imgsContainer{
-	position: absolute;
-	z-index: 1;
-	left: 50%;
-	display: block;
-	margin-top: -288px;
-	margin-left: -636px;
+.fix-staticImg{
+	position:fixed !important;
+	top:0 !important;
+}	
 
-	-webkit-transition: all 0.7s ease-in-out;
-	-moz-transition: all 0.7s ease-in-out;
-	-o-transition: all 0.7s ease-in-out;
-	transition: all 0.7s ease-in-out;
-}
-
-#staticImg.moveDown{
-	-webkit-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-}
-
-#staticImg.moveUp{
-	-webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-#staticImg.sticky-img3{
-	top: 2400%;
-	position: fixed;
-}
-#staticImg.sticky-img4{
-	top: 2500%;
-	position: fixed;
-}
-#staticImg.sticky-img5{
-	top: 2600%;
-	position: fixed;
-}
-	
-.singlegif{
-	position:absolute;
-	margin:0;
-	padding:0;
-	top:0;
-	height:100%
-}
-.singlegif img{
-	margin:0;
-	padding:0;
-	width:100%;
-	top:-100px;
-}
-/* Overwriting fullPage.js tooltip color
+/* gif sections
 * --------------------------------------- */
-.fp-tooltip{
-	color: #AAA;
-}
-#fp-nav span, .fp-slidesNav span{
-	border-color: #AAA;
-}
-#fp-nav li .active span, .fp-slidesNav .active span{
-	background: #AAA;
-}
-#fp-nav ul li .fp-tooltip {
-	color:#000;
+.singlegif img{
+	left:0;
+	top:-100px;
+	width:100%;
 }
 
-.lastSec{
-	position:relative;
-	left:-20%;
-}
+/* last sec, thank you
+* --------------------------------------- */
 .lastSecText{
 	position:absolute;
 	top:0;
-	margin-top:200px;
+	margin-top:60px;
 	height:100%;
 	text-align:left;
-	left:35%;
+	left:20%;
 	color:#000000;
 }
 .lastSecText h2{
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 }
 .writer{
 	margin-top:20px;
@@ -195,6 +107,7 @@ img{
 .writer img{
 	position:relative;
 	height:80px;
+	width:auto;
 	border-radius:50%; 
 	display:inline;
 	float:left
