@@ -1,5 +1,5 @@
 # Airome
-Web design for the presentation of Airome, the smart air purifier<br/>
+Web presentation material built for Airome, the smart air purifier<br/>
 Capstone project presented by Xinbei Hu
 on 6/2/2016 in SCAD, Savannah, GA<br/>
 Design and coded by Xinbei Hu and me.<br/>
