@@ -206,22 +206,50 @@
 	<![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script type="text/javascript">
-        var mn = $("#staticImg");
+        var mn, h, st, beginning, ending, offset25, offset26;
         var mns = "fix-staticImg";
-        var h = window.innerHeight;
-        $('.sectionAnim, .singlegif').css("height", h);
-        var st = $(window).scrollTop();
-        var beginning = $('#section24').offset().top;
-        var ending = $('#section27').offset().top;
-        
-        mn.css("top", beginning);
         var currP = 0;
         var currS = 1;
         var mnOffset = 0;
-        var offset25 = $('#section25').offset().top;
-        var offset26 = $('#section26').offset().top;
+
+        $(window).on("load", function() {
+            mn = $("#staticImg");
+            mns = "fix-staticImg";
+            h = window.innerHeight;
+            $('.sectionAnim, .singlegif').css("height", h);
+            st = $(window).scrollTop();
+            beginning = $('#section24').offset().top;
+            ending = $('#section27').offset().top;
+
+            mn.css("top", beginning);
+            mn.css('display', 'block');
+            offset25 = $('#section25').offset().top;
+            offset26 = $('#section26').offset().top;
+            
+            $(this).scrollTop(0);
+            document.onkeydown = function(e) {
+                e.preventDefault();
+                if (e.keyCode == 39 || e.keyCode == 40) {
+                    if (currS < 44) currS += 1;
+                    var name0 = "section" + currS;
+                    var name = document.getElementById(name0);
+                    $('html, body').animate({
+                        scrollTop: $(name).offset().top
+                    }, 300);
+                } else if (e.keyCode == 37 || e.keyCode == 38) {
+                    if (currS > 1) currS -= 1;
+                    var name0 = "section" + currS;
+                    var name = document.getElementById(name0);
+                    $('html, body').animate({
+                        scrollTop: $(name).offset().top
+                    }, 300);
+                }
+                st = $(window).scrollTop();
+            }
+        });
+
         $(window).scroll(function() {
-            st = $(this).scrollTop();
+            var st = $(this).scrollTop();
             if (st > beginning && st < ending) {
                 mn.addClass(mns);
             } else {
@@ -262,28 +290,6 @@
                 $('#v4').css("z-index", 0);
                 $('#v1').get(0).currentTime = 0;
                 $('#v1').load();
-            }
-        });
-        $(document).ready(function() {
-            $(this).scrollTop(0);
-            document.onkeydown = function(e) {
-                e.preventDefault();
-                if (e.keyCode == 39 || e.keyCode == 40) {
-                    if (currS < 44) currS += 1;
-                    var name0 = "section" + currS;
-                    var name = document.getElementById(name0);
-                    $('html, body').animate({
-                        scrollTop: $(name).offset().top
-                    }, 300);
-                } else if (e.keyCode == 37 || e.keyCode == 38) {
-                    if (currS > 1) currS -= 1;
-                    var name0 = "section" + currS;
-                    var name = document.getElementById(name0);
-                    $('html, body').animate({
-                        scrollTop: $(name).offset().top
-                    }, 300);
-                }
-                st = $(window).scrollTop();
             }
         });
 

@@ -62,7 +62,7 @@ img{
 /* static img
 * --------------------------------------- */
 #staticImg{
-	display: block;
+	display: none;
 	position: absolute;
 	z-index: 1;
 	left: 5%;
